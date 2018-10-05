@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Similar Apps</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container-fluid">
+
+<div class="row">
+	<div class="col-md-12">
+  <h1>Similar apps - Find similar apps effortlessly.</h1>
+</div>
+	<div class="col-md-8">
+<form action="" class="form-group">
+	<div class="col-md-2 col-lg-2">
+  <label for="usr">id:</label>
+</div>
+	<div class="col-md-8 col-lg-8">
+  <input name="appid" type="text" value="{{ l }}" class="form-control" id="usr">
+</div>
+	<div class="col-md-2 col-lg-2">
+		<button type="submit" class="form-control btn btn-secondary" id="usr">
+  	Go!
+  </button>
+</div>
+</form>
+</div>
+
+</div>
+</div>
+
+{% for li in lis %}
+<div class="row" style="margin-top:20px;">
+	<div class="col-md-2">
+</div>
+	<div class="col-md-4">
+<a href="{% url 'dash:similar_list' %}?appid={{ li }}">
+{{ li }}</a>
+</div>
+</div>
+{% endfor %}
+
+</body>
+</html>
+
